@@ -1,1 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Double T Flower Florist</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #faf8f4;
+      color: #4b423d;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      background: rgba(255,255,255,0.95);
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee8e2;
+    }
+
+    .logo h1 {
+      font-size: 22px;
+      letter-spacing: 5px;
+      font-weight: 500;
+    }
+
+    .logo p {
+      font-size: 11px;
+      letter-spacing: 3px;
+      margin-top: 4px;
+      color: #9c8f86;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b423d;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #c59b91;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 620px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      background:
+        linear-gradient(
+          rgba(250,248,244,0.75),
+          rgba(250,248,244,0.75)
+        ),
+        url("https://images.unsplash.com/photo-1490750967868-88aa4486c946");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-small {
+      letter-spacing: 4px;
+      font-size: 12px;
+      margin-bottom: 25px;
+      color: #9c8f86;
+    }
+
+    .hero h2 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: 58px;
+      line-height: 1.15;
+      margin-bottom: 22px;
+    }
+
+    .hero-cn {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #756a63;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 28px;
+      margin: 5px;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+
+    .primary {
+      background: #4b423d;
+      color: white;
+    }
+
+    .primary:hover {
+      background: #756a63;
+    }
+
+    .secondary {
+      border: 1px solid #4b423d;
+      color: #4b423d;
+    }
+
+    .secondary:hover {
+      background: #4b423d;
+      color: white;
+    }
+
+    /* CATEGORIES */
+
+    .categories {
+      padding: 100px 8%;
+      text-align: center;
+    }
+
+    .section-small {
+      letter-spacing: 4px;
+      font-size: 11px;
+      color: #b39d92;
+    }
+
+    .categories h2 {
+      font-family: Georgia, serif;
+      font-size: 38px;
+      font-weight: 400;
+      margin: 15px 0 50px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .category {
+      background: #f2ece6;
+      min-height: 260px;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: 0.3s;
+    }
+
+    .category:hover {
+      transform: translateY(-5px);
+      background: #eee4dc;
+    }
+
+    .category span {
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+
+    .category h3 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: 22px;
+    }
+
+    .category p {
+      margin-top: 8px;
+      color: #94867d;
+      font-size: 13px;
+    }
+
+    /* CUSTOM BOUQUET */
+
+    .custom {
+      background: #eee7df;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .custom h2 {
+      font-family: Georgia, serif;
+      font-size: 42px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .custom p {
+      line-height: 1.8;
+      margin-bottom: 30px;
+      color: #756a63;
+    }
+
+    /* DELIVERY */
+
+    .delivery {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .delivery h2 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .delivery p {
+      color: #887a72;
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #403934;
+      color: #eee7df;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    footer h2 {
+      letter-spacing: 5px;
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    footer p {
+      margin-top: 10px;
+      color: #bdb3ad;
+      font-size: 12px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      header {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      nav {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 600px;
+        padding: 40px 20px;
+      }
+
+      .hero h2 {
+        font-size: 40px;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 34px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<header>
+
+  <div class="logo">
+    <h1>DOUBLE T</h1>
+    <p>FLOWER FLORIST</p>
+  </div>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#shop">Fresh Flowers</a>
+    <a href="#shop">Soap Flowers</a>
+    <a href="#custom">Custom Bouquet</a>
+    <a href="#delivery">Delivery</a>
+  </nav>
+
+</header>
+
+
+<section class="hero">
+
+  <div>
+
+    <p class="hero-small">
+      DOUBLE T FLOWER FLORIST
+    </p>
+
+    <h2>
+      Flowers Made for<br>
+      Your Special Moments.
+    </h2>
+
+    <p class="hero-cn">
+      为每一个重要的日子，<br>
+      准备一束属于你的花。
+    </p>
+
+    <a class="button primary" href="#shop">
+      SHOP FLOWERS
+    </a>
+
+    <a class="button secondary" href="#custom">
+      CUSTOM BOUQUET
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="categories" id="shop">
+
+  <p class="section-small">OUR COLLECTION</p>
+
+  <h2>Shop by Category</h2>
+
+  <div class="category-grid">
+
+    <div class="category">
+      <span>🌷</span>
+      <h3>Fresh Flowers</h3>
+      <p>新鲜花束</p>
+    </div>
+
+    <div class="category">
+      <span>🤍</span>
+      <h3>Soap Flowers</h3>
+      <p>香皂花束</p>
+    </div>
+
+    <div class="category">
+      <span>🎂</span>
+      <h3>Birthday</h3>
+      <p>生日花束</p>
+    </div>
+
+    <div class="category">
+      <span>🎓</span>
+      <h3>Graduation</h3>
+      <p>毕业花束</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="custom" id="custom">
+
+  <p class="section-small">MADE FOR YOU</p>
+
+  <h2>A Bouquet, Made Just for You.</h2>
+
+  <p>
+    找不到喜欢的款式？<br>
+    告诉我们你的预算、颜色和场合，<br>
+    让 Double T 为你设计专属花束。
+  </p>
+
+  <a class="button primary" href="#">
+    CUSTOMISE YOUR BOUQUET
+  </a>
+
+</section>
+
+
+<section class="delivery" id="delivery">
+
+  <p class="section-small">DOUBLE T DELIVERY</p>
+
+  <h2>Flower Delivery Available 🚚</h2>
+
+  <p>
+    精心包装每一束花，<br>
+    把你的心意安全送到 TA 手上。
+  </p>
+
+</section>
+
+
+<footer>
+
+  <h2>DOUBLE T</h2>
+
+  <p>FLOWER FLORIST</p>
+
+  <p>
+    Fresh Flowers · Soap Flowers · Custom Bouquets
+  </p>
+
+</footer>
+
+
+</body>
+</html>
